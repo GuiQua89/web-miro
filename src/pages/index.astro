@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+// REVISAR: Schema.org con datos reales de MIRO
+const schema = JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'ProfessionalService',
+    name: 'MIRO',
+    url: 'https://www.miro.agency',
+    description: 'Agencia de inteligencia artificial, automatizaciones y marketing digital.',
+    // REVISAR: telephone, address, sameAs (redes sociales)
+});
+---
+
+<BaseLayout
+    title="MIRO | Agencia de IA, Automatizaciones y Marketing Digital"
+    description="Transformamos negocios con inteligencia artificial, automatizaciones y marketing digital. Soluciones a medida para empresas que quieren crecer."
+    schemaData={schema}
+>
+    <main id="contenido-principal">
+        <!-- REVISAR: Hero Section -->
+        <section class="section-padding bg-surface-alt">
+            <div class="container-max text-center">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-text mb-6">
+                    <!-- REVISAR: headline principal de MIRO -->
+                    Bienvenido a MIRO
+                </h1>
+                <p class="text-lg md:text-xl text-text-light max-w-2xl mx-auto mb-8">
+                    <!-- REVISAR: subtítulo / propuesta de valor -->
+                    Agencia de inteligencia artificial, automatizaciones y marketing digital.
+                </p>
+                <a href="/contacto" class="btn-primary">
+                    <!-- REVISAR: CTA principal -->
+                    Habla con nosotros
+                </a>
+            </div>
+        </section>
+    </main>
+</BaseLayout>
