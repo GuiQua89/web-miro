@@ -1,0 +1,102 @@
+---
+// FAQ section with vanilla JS accordion
+const faqs = [
+    {
+        q: '¿Qué garantiza que va a funcionar?',
+        a: 'No garantizamos magia — garantizamos sistema. El AIMA está probado en múltiples industrias. Si aplicamos el método correctamente y no ves resultados en 90 días, iteramos sin costo adicional hasta que funcione.',
+    },
+    {
+        q: '¿Trabajan con cualquier negocio?',
+        a: 'No. Seleccionamos a nuestros clientes. Trabajamos con negocios que tienen un producto real, que están dispuestos a implementar y que entienden que el marketing es un sistema, no un botón de "magia".',
+    },
+    {
+        q: '¿Cuánto tiempo tarda en verse resultados?',
+        a: 'Los primeros indicadores (leads, clics calificados, mensajes entrantes) aparecen en las primeras 2–3 semanas. Los resultados de conversión y ventas consolidan entre el mes 1 y 3, dependiendo del ticket y ciclo de venta.',
+    },
+    {
+        q: '¿Cómo funciona el modelo Partner?',
+        a: 'En el modelo Partner compartimos el riesgo: ponemos nuestro sistema y trabajo, y cobramos en función de los resultados generados. No hay mensualidad fija — si no hay resultados, no cobras sin razón. Ideal para negocios con producto validado.',
+    },
+];
+---
+
+<section
+    style="background: var(--white); padding: clamp(64px, 10vw, 110px) 24px;"
+>
+    <div style="max-width: 720px; margin: 0 auto;">
+
+        <!-- Header -->
+        <div class="fade-in" style="text-align: center; margin-bottom: 56px;">
+            <span
+                style="display: inline-block; font-family: 'Outfit', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue); margin-bottom: 16px;"
+            >
+                FAQ
+            </span>
+            <h2
+                style="font-family: 'Outfit', sans-serif; font-size: clamp(26px, 4.5vw, 48px); font-weight: 800; color: var(--black); letter-spacing: -0.03em; line-height: 1.1;"
+            >
+                Respuestas Sin Filtro.
+            </h2>
+        </div>
+
+        <!-- Accordion items -->
+        <div style="display: flex; flex-direction: column; gap: 0;">
+            {faqs.map((faq, i) => (
+                <div
+                    class="faq-item fade-in"
+                    style={`border-bottom: 1px solid rgba(0,0,0,0.08); animation-delay: ${i * 80}ms;`}
+                >
+                    <button
+                        class="faq-trigger"
+                        aria-expanded="false"
+                        style="width: 100%; background: none; border: none; cursor: pointer; padding: 24px 0; display: flex; align-items: center; justify-content: space-between; gap: 20px; text-align: left;"
+                    >
+                        <h3 style="font-family: 'Outfit', sans-serif; font-size: 17px; font-weight: 600; color: var(--black); line-height: 1.35; letter-spacing: -0.01em; margin: 0;">
+                            {faq.q}
+                        </h3>
+                        <!-- Chevron SVG -->
+                        <svg
+                            class="faq-chevron"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true"
+                        >
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 15px; color: var(--gray); line-height: 1.75; padding-right: 40px;">
+                            {faq.a}
+                        </p>
+                    </div>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>
+
+<script>
+    document.querySelectorAll('.faq-item').forEach((item) => {
+        const trigger = item.querySelector('.faq-trigger') as HTMLButtonElement;
+        trigger.addEventListener('click', () => {
+            const isOpen = item.classList.contains('open');
+            // Close all
+            document.querySelectorAll('.faq-item').forEach((i) => {
+                i.classList.remove('open');
+                const btn = i.querySelector('.faq-trigger') as HTMLButtonElement;
+                btn.setAttribute('aria-expanded', 'false');
+            });
+            // Open clicked if it was closed
+            if (!isOpen) {
+                item.classList.add('open');
+                trigger.setAttribute('aria-expanded', 'true');
+            }
+        });
+    });
+</script>

@@ -1,0 +1,77 @@
+---
+// Tech ecosystem — infinite horizontal carousel, CSS-only animation
+// Icons from simple-icons CDN
+const tools = [
+    { name: 'Make',         icon: 'make'         },
+    { name: 'n8n',          icon: 'n8n'          },
+    { name: 'Zapier',       icon: 'zapier'       },
+    { name: 'OpenAI',       icon: 'openai'       },
+    { name: 'Anthropic',    icon: 'anthropic'    },
+    { name: 'Gemini',       icon: 'googlegemini' },
+    { name: 'Notion',       icon: 'notion'       },
+    { name: 'Airtable',     icon: 'airtable'     },
+    { name: 'HubSpot',      icon: 'hubspot'      },
+    { name: 'Slack',        icon: 'slack'        },
+    { name: 'Meta',         icon: 'meta'         },
+    { name: 'WhatsApp',     icon: 'whatsapp'     },
+    { name: 'Astro',        icon: 'astro'        },
+    { name: 'Tailwind CSS', icon: 'tailwindcss'  },
+    { name: 'WordPress',    icon: 'wordpress'    },
+];
+
+const cdn = 'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/';
+const doubled = [...tools, ...tools];
+---
+
+<section
+    style="background: var(--white); padding: clamp(56px, 8vw, 96px) 0; border-top: 1px solid rgba(0,0,0,0.06); border-bottom: 1px solid rgba(0,0,0,0.06);"
+>
+    <!-- Header -->
+    <div style="max-width: var(--container); margin: 0 auto; padding: 0 24px; text-align: center; margin-bottom: 48px;">
+        <div class="fade-in">
+            <span
+                style="display: inline-block; font-family: 'Outfit', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue); margin-bottom: 14px;"
+            >
+                ECOSISTEMA TECNOLÓGICO
+            </span>
+            <h2
+                style="font-family: 'Outfit', sans-serif; font-size: clamp(22px, 3vw, 30px); font-weight: 700; color: var(--black); margin-bottom: 10px; letter-spacing: -0.02em;"
+            >
+                Las herramientas que usamos para escalar
+            </h2>
+            <p style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 15px; color: var(--gray); max-width: 480px; margin: 0 auto; line-height: 1.6;">
+                Integramos las plataformas líderes del mercado para construir sistemas que trabajan sin parar.
+            </p>
+        </div>
+    </div>
+
+    <!-- Carousel — bleeds full width -->
+    <div
+        class="carousel-wrapper"
+        role="list"
+        aria-label="Herramientas y plataformas tecnológicas"
+    >
+        <div class="carousel-track">
+            {doubled.map((tool, i) => (
+                <div
+                    class="carousel-item"
+                    role="listitem"
+                    aria-label={i < tools.length ? tool.name : undefined}
+                    aria-hidden={i >= tools.length ? 'true' : undefined}
+                >
+                    <img
+                        src={`${cdn}${tool.icon}.svg`}
+                        alt=""
+                        width="34"
+                        height="34"
+                        loading="lazy"
+                        style="width: 34px; height: 34px; object-fit: contain; filter: grayscale(100%); transition: filter 250ms ease;"
+                        onmouseover="this.style.filter='grayscale(0%)'"
+                        onmouseout="this.style.filter='grayscale(100%)'"
+                    />
+                    <span>{tool.name}</span>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>

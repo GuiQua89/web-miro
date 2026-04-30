@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-    site: 'https://www.miro.agency', // REVISAR: dominio real del cliente
+    site: 'https://www.mirocreatives.com',
     integrations: [sitemap()],
     vite: {
         plugins: [tailwindcss()],

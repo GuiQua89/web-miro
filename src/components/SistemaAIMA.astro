@@ -1,0 +1,85 @@
+---
+// Sistema AIMA — 4 dark cards with CSS glow hover
+const steps = [
+    {
+        n: '01',
+        title: 'Mensaje Brutal',
+        body: 'Dejamos de hablar de ti para hablar de los problemas que solucionas. Si no conectas en 3 segundos, perdiste.',
+    },
+    {
+        n: '02',
+        title: 'Inyección Ads',
+        body: 'Meta Ads diseñados para filtrar curiosos y atraer compradores. No buscamos likes, buscamos leads calificados.',
+    },
+    {
+        n: '03',
+        title: 'Cierre Rápido',
+        body: 'Un funnel de conversión mínimo donde el usuario solo tiene un camino: comprar o agendar.',
+    },
+    {
+        n: '04',
+        title: 'Escala CRM',
+        body: 'Control total. Instalamos el sistema de seguimiento para que ninguna venta se escape.',
+    },
+];
+---
+
+<section
+    id="sistema"
+    style="background: var(--cream); padding: clamp(64px, 10vw, 110px) 24px;"
+>
+    <div style="max-width: var(--container); margin: 0 auto;">
+
+        <!-- Header -->
+        <div class="fade-in" style="text-align: center; margin-bottom: 64px;">
+            <span
+                style="display: inline-block; font-family: 'Outfit', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue); margin-bottom: 16px;"
+            >
+                SYSTEM
+            </span>
+            <h2
+                style="font-family: 'Outfit', sans-serif; font-size: clamp(26px, 4.5vw, 48px); font-weight: 800; color: var(--black); letter-spacing: -0.03em; margin-bottom: 14px; line-height: 1.1;"
+            >
+                SISTEMA AIMA
+            </h2>
+            <p
+                style="font-family: 'Outfit', sans-serif; font-size: 16px; font-weight: 500; color: var(--navy); letter-spacing: 0.05em; text-transform: uppercase;"
+            >
+                Atención · Interés · Monetización · Automatización
+            </p>
+        </div>
+
+        <!-- Cards grid -->
+        <div
+            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px;"
+        >
+            {steps.map((step, i) => (
+                <div
+                    class="fade-in aima-card"
+                    style={`
+                        background: var(--navy);
+                        border-radius: var(--radius-card);
+                        padding: 32px 28px;
+                        animation-delay: ${i * 100}ms;
+                    `}
+                >
+                    <!-- Number -->
+                    <div
+                        style="font-family: 'Outfit', sans-serif; font-size: 48px; font-weight: 800; color: var(--blue-light); opacity: 0.8; line-height: 1; margin-bottom: 20px; letter-spacing: -0.04em;"
+                        aria-hidden="true"
+                    >
+                        {step.n}
+                    </div>
+                    <h3
+                        style="font-family: 'Outfit', sans-serif; font-size: 20px; font-weight: 700; color: #fff; margin-bottom: 12px; letter-spacing: -0.01em;"
+                    >
+                        {step.title}
+                    </h3>
+                    <p style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; color: rgba(255,255,255,0.68); line-height: 1.7;">
+                        {step.body}
+                    </p>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>

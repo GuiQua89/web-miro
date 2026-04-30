@@ -1,0 +1,113 @@
+---
+// Planes / Servicios — 2 cards without prices
+const retainerFeatures = [
+    'Gestión Total Ads (Meta)',
+    'Optimización de Funnel Mensual',
+    'Soporte WhatsApp 24/7',
+];
+const partnerFeatures = [
+    'Inversión en sistema a riesgo compartido',
+    'Nosotros cerramos, tú entregas',
+    'Escalabilidad ilimitada',
+];
+---
+
+<section
+    style="background: var(--white); padding: clamp(64px, 10vw, 110px) 24px;"
+>
+    <div style="max-width: var(--container); margin: 0 auto;">
+
+        <!-- Header -->
+        <div class="fade-in" style="text-align: center; margin-bottom: 60px;">
+            <span
+                style="display: inline-block; font-family: 'Outfit', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue); margin-bottom: 16px;"
+            >
+                PLANES / SERVICIOS
+            </span>
+            <h2
+                style="font-family: 'Outfit', sans-serif; font-size: clamp(26px, 4.5vw, 48px); font-weight: 800; color: var(--black); letter-spacing: -0.03em; margin-bottom: 14px; line-height: 1.1;"
+            >
+                Tu éxito es nuestro negocio.
+            </h2>
+            <p style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; color: var(--gray); max-width: 480px; margin: 0 auto;">
+                Dos modelos de trabajo. Ninguno incluye resultados mediocres.
+            </p>
+        </div>
+
+        <!-- Cards -->
+        <div
+            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; max-width: 860px; margin: 0 auto;"
+        >
+            <!-- Card: Retainer -->
+            <div
+                class="fade-in"
+                style="background: var(--cream); border: 1.5px solid var(--blue); border-radius: var(--radius-card); padding: 36px 32px; display: flex; flex-direction: column;"
+            >
+                <div style="font-family: 'Outfit', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue); margin-bottom: 10px;">
+                    RETAINER
+                </div>
+                <h3 style="font-family: 'Outfit', sans-serif; font-size: 28px; font-weight: 700; color: var(--navy); margin-bottom: 10px; letter-spacing: -0.02em;">
+                    Gestión Elite
+                </h3>
+                <p style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; color: var(--gray); margin-bottom: 32px; line-height: 1.65;">
+                    Para negocios que quieren escalar sin depender de sí mismos.
+                </p>
+                <ul style="list-style: none; padding: 0; margin: 0 0 36px; display: flex; flex-direction: column; gap: 14px; flex: 1;">
+                    {retainerFeatures.map((f) => (
+                        <li style="display: flex; align-items: flex-start; gap: 12px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; color: var(--black); line-height: 1.5;">
+                            <span style="color: var(--blue); font-size: 16px; flex-shrink: 0; margin-top: 1px;" aria-hidden="true">✓</span>
+                            {f}
+                        </li>
+                    ))}
+                </ul>
+                <a
+                    href="#contacto"
+                    style="display: block; text-align: center; font-family: 'Outfit', sans-serif; font-size: 15px; font-weight: 600; background: var(--blue); color: #fff; padding: 14px 28px; border-radius: var(--radius-btn); text-decoration: none; transition: background 0.2s; min-height: 44px; line-height: 1.3; display: flex; align-items: center; justify-content: center;"
+                    onmouseover="this.style.background='var(--navy)'"
+                    onmouseout="this.style.background='var(--blue)'"
+                >
+                    Consultar propuesta
+                </a>
+            </div>
+
+            <!-- Card: Partner -->
+            <div
+                class="fade-in"
+                style="background: var(--navy); border-radius: var(--radius-card); padding: 36px 32px; display: flex; flex-direction: column; animation-delay: 100ms;"
+            >
+                <div style="font-family: 'Outfit', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue-light); margin-bottom: 10px;">
+                    PARTNER
+                </div>
+                <h3 style="font-family: 'Outfit', sans-serif; font-size: 28px; font-weight: 700; color: #fff; margin-bottom: 10px; letter-spacing: -0.02em;">
+                    Crecimiento Compartido
+                </h3>
+                <p style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; color: rgba(255,255,255,0.68); margin-bottom: 32px; line-height: 1.65;">
+                    Para negocios que confían tanto en su producto que pagan solo por resultados.
+                </p>
+                <ul style="list-style: none; padding: 0; margin: 0 0 36px; display: flex; flex-direction: column; gap: 14px; flex: 1;">
+                    {partnerFeatures.map((f) => (
+                        <li style="display: flex; align-items: flex-start; gap: 12px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; color: rgba(255,255,255,0.85); line-height: 1.5;">
+                            <span style="color: var(--blue-light); font-size: 16px; flex-shrink: 0; margin-top: 1px;" aria-hidden="true">✓</span>
+                            {f}
+                        </li>
+                    ))}
+                </ul>
+                <a
+                    href="#contacto"
+                    style="display: flex; align-items: center; justify-content: center; text-align: center; font-family: 'Outfit', sans-serif; font-size: 15px; font-weight: 600; background: transparent; color: #fff; padding: 14px 28px; border-radius: var(--radius-btn); text-decoration: none; border: 1.5px solid rgba(255,255,255,0.4); transition: border-color 0.2s, background 0.2s; min-height: 44px;"
+                    onmouseover="this.style.borderColor='#fff'; this.style.background='rgba(255,255,255,0.08)'"
+                    onmouseout="this.style.borderColor='rgba(255,255,255,0.4)'; this.style.background='transparent'"
+                >
+                    Consultar propuesta
+                </a>
+            </div>
+        </div>
+
+        <!-- Extra mention -->
+        <div class="fade-in" style="text-align: center; margin-top: 40px;">
+            <p style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; color: var(--gray); max-width: 520px; margin: 0 auto; line-height: 1.65;">
+                ¿Necesitás una web que convierta? También desarrollamos sitios web para negocios que están listos para crecer.
+            </p>
+        </div>
+    </div>
+</section>

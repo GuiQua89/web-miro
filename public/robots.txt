@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-# REVISAR: actualizar con el dominio real antes del despliegue
-Sitemap: https://www.miro.agency/sitemap-index.xml
+Sitemap: https://www.mirocreatives.com/sitemap-index.xml

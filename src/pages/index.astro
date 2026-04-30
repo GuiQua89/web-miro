@@ -1,39 +1,54 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import TechCarousel from '../components/TechCarousel.astro';
+import Diagnostico from '../components/Diagnostico.astro';
+import SistemaAIMA from '../components/SistemaAIMA.astro';
+import Planes from '../components/Planes.astro';
+import Nosotros from '../components/Nosotros.astro';
+import FAQ from '../components/FAQ.astro';
+import Contacto from '../components/Contacto.astro';
+import Footer from '../components/Footer.astro';
+import WAFloat from '../components/WAFloat.astro';
 
-// REVISAR: Schema.org con datos reales de MIRO
 const schema = JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'ProfessionalService',
     name: 'MIRO',
-    url: 'https://www.miro.agency',
-    description: 'Agencia de inteligencia artificial, automatizaciones y marketing digital.',
-    // REVISAR: telephone, address, sameAs (redes sociales)
+    url: 'https://www.mirocreatives.com',
+    description: 'Agencia de IA, automatizaciones y marketing digital en Panamá. Escalamos negocios en toda Latinoamérica.',
+    slogan: "We don't design, we position.",
+    image: 'https://www.mirocreatives.com/logo.png',
+    address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Ciudad de Panamá',
+        addressCountry: 'PA',
+    },
+    areaServed: ['Panamá', 'Costa Rica', 'Colombia', 'México', 'Argentina', 'Chile', 'Latinoamérica'],
+    knowsLanguage: 'es',
+    sameAs: [], // REVISAR: agregar URLs de redes sociales de MIRO
 });
 ---
 
 <BaseLayout
-    title="MIRO | Agencia de IA, Automatizaciones y Marketing Digital"
-    description="Transformamos negocios con inteligencia artificial, automatizaciones y marketing digital. Soluciones a medida para empresas que quieren crecer."
+    title="MIRO | Agencia de IA y Marketing Digital en Panamá"
+    description="Agencia de IA, automatizaciones y Meta Ads en Panamá. Escalamos negocios en toda Latinoamérica con el sistema AIMA. Consultoría gratuita."
     schemaData={schema}
 >
+    <Navbar />
+
     <main id="contenido-principal">
-        <!-- REVISAR: Hero Section -->
-        <section class="section-padding bg-surface-alt">
-            <div class="container-max text-center">
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-text mb-6">
-                    <!-- REVISAR: headline principal de MIRO -->
-                    Bienvenido a MIRO
-                </h1>
-                <p class="text-lg md:text-xl text-text-light max-w-2xl mx-auto mb-8">
-                    <!-- REVISAR: subtítulo / propuesta de valor -->
-                    Agencia de inteligencia artificial, automatizaciones y marketing digital.
-                </p>
-                <a href="/contacto" class="btn-primary">
-                    <!-- REVISAR: CTA principal -->
-                    Habla con nosotros
-                </a>
-            </div>
-        </section>
+        <Hero />
+        <TechCarousel />
+        <Diagnostico />
+        <SistemaAIMA />
+        <Planes />
+        <Nosotros />
+        <FAQ />
+        <Contacto />
     </main>
+
+    <Footer />
+    <WAFloat />
 </BaseLayout>

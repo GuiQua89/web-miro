@@ -1,0 +1,161 @@
+---
+// Sticky navbar with mobile hamburger overlay and scroll backdrop effect
+---
+
+<header
+    id="navbar"
+    style="position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: transparent;"
+>
+    <div style="max-width: var(--container); margin: 0 auto; padding: 0 24px; height: 72px; display: flex; align-items: center; justify-content: space-between;">
+
+        <!-- Logo -->
+        <a href="/" aria-label="MIRO — inicio" style="display: flex; align-items: center; flex-shrink: 0;">
+            <img
+                src="/logo.png"
+                alt="MIRO"
+                style="height: 100px; width: auto; display: block;"
+            />
+        </a>
+
+        <!-- Desktop nav links -->
+        <nav aria-label="Navegación principal" class="nav-desktop" style="display: flex; align-items: center; gap: 36px;">
+            <a href="#sistema" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; font-weight: 500; color: var(--black); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--blue)'" onmouseout="this.style.color='var(--black)'">
+                Sistema
+            </a>
+            <a href="#metodo" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; font-weight: 500; color: var(--black); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--blue)'" onmouseout="this.style.color='var(--black)'">
+                Método
+            </a>
+            <a href="#nosotros" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; font-weight: 500; color: var(--black); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--blue)'" onmouseout="this.style.color='var(--black)'">
+                Nosotros
+            </a>
+            <a href="#contacto" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; font-weight: 500; color: var(--black); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--blue)'" onmouseout="this.style.color='var(--black)'">
+                Contacto
+            </a>
+        </nav>
+
+        <!-- Desktop CTA -->
+        <a
+            href="#contacto"
+            class="nav-cta-btn"
+            style="font-family: 'Outfit', sans-serif; font-size: 14px; font-weight: 600; background: var(--blue); color: #fff; padding: 10px 22px; border-radius: var(--radius-btn); text-decoration: none; transition: background 0.2s, transform 0.2s; white-space: nowrap; min-height: 44px; display: inline-flex; align-items: center;"
+            onmouseover="this.style.background='var(--navy)'"
+            onmouseout="this.style.background='var(--blue)'"
+        >
+            Auditoría Gratis
+        </a>
+
+        <!-- Hamburger button (mobile only) -->
+        <button
+            id="hamburger"
+            aria-label="Abrir menú"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+            class="hamburger-btn"
+            style="display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; align-items: center; justify-content: center;"
+        >
+            <span style="display: block; width: 24px; height: 2px; background: var(--black); border-radius: 2px; transition: transform 0.2s;"></span>
+            <span style="display: block; width: 24px; height: 2px; background: var(--black); border-radius: 2px; transition: opacity 0.2s;"></span>
+            <span style="display: block; width: 24px; height: 2px; background: var(--black); border-radius: 2px; transition: transform 0.2s;"></span>
+        </button>
+    </div>
+</header>
+
+<!-- Mobile menu overlay -->
+<nav
+    id="mobile-menu"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Menú móvil"
+>
+    <!-- Close button -->
+    <button
+        id="mobile-close"
+        aria-label="Cerrar menú"
+        style="position: absolute; top: 24px; right: 24px; background: none; border: none; cursor: pointer; padding: 8px;"
+    >
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--black)" stroke-width="2" stroke-linecap="round">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+    </button>
+
+    <a href="#sistema" class="mobile-nav-link" style="font-family: 'Outfit', sans-serif; font-size: 32px; font-weight: 700; color: var(--black); text-decoration: none; letter-spacing: -0.02em;">
+        Sistema
+    </a>
+    <a href="#metodo" class="mobile-nav-link" style="font-family: 'Outfit', sans-serif; font-size: 32px; font-weight: 700; color: var(--black); text-decoration: none; letter-spacing: -0.02em;">
+        Método
+    </a>
+    <a href="#nosotros" class="mobile-nav-link" style="font-family: 'Outfit', sans-serif; font-size: 32px; font-weight: 700; color: var(--black); text-decoration: none; letter-spacing: -0.02em;">
+        Nosotros
+    </a>
+    <a href="#contacto" class="mobile-nav-link" style="font-family: 'Outfit', sans-serif; font-size: 32px; font-weight: 700; color: var(--black); text-decoration: none; letter-spacing: -0.02em;">
+        Contacto
+    </a>
+
+    <a
+        href="#contacto"
+        class="mobile-nav-link"
+        style="font-family: 'Outfit', sans-serif; font-size: 18px; font-weight: 600; background: var(--blue); color: #fff; padding: 14px 36px; border-radius: var(--radius-btn); text-decoration: none; margin-top: 8px;"
+    >
+        Auditoría Gratis
+    </a>
+</nav>
+
+<style>
+    /* Desktop: show links, hide hamburger */
+    @media (min-width: 769px) {
+        .hamburger-btn { display: none !important; }
+    }
+    /* Mobile: hide desktop links, show hamburger */
+    @media (max-width: 768px) {
+        .nav-desktop { display: none !important; }
+        .nav-cta-btn { display: none !important; }
+        .hamburger-btn { display: flex !important; }
+    }
+</style>
+
+<script>
+    const navbar = document.getElementById('navbar') as HTMLElement;
+    const hamburger = document.getElementById('hamburger') as HTMLButtonElement;
+    const mobileMenu = document.getElementById('mobile-menu') as HTMLElement;
+    const mobileClose = document.getElementById('mobile-close') as HTMLButtonElement;
+    const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+    // Scroll effect
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 10) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    }, { passive: true });
+
+    // Open mobile menu
+    hamburger.addEventListener('click', () => {
+        mobileMenu.classList.add('open');
+        hamburger.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+    });
+
+    // Close mobile menu
+    function closeMenu() {
+        mobileMenu.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+    }
+
+    mobileClose.addEventListener('click', closeMenu);
+
+    // Close on link click
+    mobileLinks.forEach((link) => {
+        link.addEventListener('click', closeMenu);
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+            closeMenu();
+            hamburger.focus();
+        }
+    });
+</script>
