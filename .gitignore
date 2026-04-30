@@ -19,6 +19,10 @@ node_modules/
 # Reference files — internal use only
 frontend-reference/
 
+# Claude Code project instructions — internal use only
+claude.md
+CLAUDE.md
+
 # Logs
 npm-debug.log*
 yarn-debug.log*
