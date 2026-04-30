@@ -19,9 +19,10 @@ node_modules/
 # Reference files — internal use only
 frontend-reference/
 
-# Claude Code project instructions — internal use only
+# Claude Code project instructions and skills — internal use only
 claude.md
 CLAUDE.md
+skills-astro/
 
 # Logs
 npm-debug.log*
